@@ -1,12 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 24 18:13:43 2023
 
-@author: Yuyi
-"""
-# =============================================================================
-# 範例，但有問題，28~30行要改 : 取 電壓過零點->fitps降採樣到32
-# =============================================================================
+
 
 from pyts.datasets import load_gunpoint
 from pyts.image import MarkovTransitionField
