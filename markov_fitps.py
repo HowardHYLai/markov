@@ -9,7 +9,7 @@ from fun_FITPS import FITPS
 
 V, I = None, None
 
-path = r"C:/NILM/dataset/cooldata/transfer/Hair_drayer_1_0ms.csv"
+path = r"C:/NILM/dataset/cooldata/transfer\Drill_1_0ms.csv"
 data = pd.read_csv(path)
 V = list(data.iloc[:,0]) #實驗室量測數據用
 I = list(data.iloc[:,1])
@@ -81,12 +81,12 @@ y = mtf.fit_transform(x)
 # plt.imshow(y[57])  ## 
 # plt.show()
 
-# for i in range (240, 260):
-#     plt.imshow(y[i])
+for i in range (4468, 4500):
+    plt.imshow(y[i])
 
-#     # plt.savefig("C:/NILM/pictur/" )  #儲存圖片
+    # plt.savefig("C:/NILM/pictur/" )  #儲存圖片
 
-#     plt.savefig("C:/NILM/數據圖/cool數據集/Hair_drayer_1_0ms/close/{}.png".format(i)) #输入地址，并利用format函数修改图片名称
-#     plt.clf() #需要重新更新画布，否则会出现同一张画布上绘制多张图片
+    plt.savefig("C:/NILM/數據圖/cool數據集/Hair_drayer_1_0ms/close/{}.png".format(i)) #输入地址，并利用format函数修改图片名称
+    plt.clf() #需要重新更新画布，否则会出现同一张画布上绘制多张图片
 
 # #     # plt.show()
