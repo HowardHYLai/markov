@@ -20,11 +20,11 @@ I = list(data.iloc[:,1])  ## 電流
 x = []
 
 for i in range(0, len(I)-32, 32):  
-    start, end = i, i+32   ## 照理說要先取 電壓過零點->fitps降採樣到32，這交給你自己咯
+    start, end = i, i+32   ## 照理說要先取 電壓過零點->fitps降採樣到32
     x.append(I[start:end])
 
 
-X = np.array(x) ## shape: (6817, 32)  記得第二維不能有 32、33這樣跳，要統一大小
+X = np.array(x) ## shape: (6817, 32)  第二維不能有 32、33這樣跳，要統一大小
 
 print("X的維度 : ",X.shape)  
 
@@ -33,5 +33,5 @@ y = mtf.fit_transform(x)
 
 
 
-plt.imshow(y[10])  ## 畫第10個週期 這是示範，你可以畫很多週期
+plt.imshow(y[10])  ## 畫第10個週期 
 

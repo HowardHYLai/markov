@@ -81,12 +81,12 @@ y = mtf.fit_transform(x)
 # plt.imshow(y[57])  ## 
 # plt.show()
 
-for i in range (4468, 4500):
-    plt.imshow(y[i])
+# for i in range (4468, 4500):
+#     plt.imshow(y[i])
 
-    # plt.savefig("C:/NILM/pictur/" )  #儲存圖片
+#     # plt.savefig("C:/NILM/pictur/" )  #儲存圖片
 
-    plt.savefig("C:/NILM/數據圖/cool數據集/Hair_drayer_1_0ms/close/{}.png".format(i)) #输入地址，并利用format函数修改图片名称
-    plt.clf() #需要重新更新画布，否则会出现同一张画布上绘制多张图片
+#     plt.savefig("C:/NILM/數據圖/cool數據集/Hair_drayer_1_0ms/close/{}.png".format(i)) #输入地址，并利用format函数修改图片名称
+#     plt.clf() #需要重新更新画布，否则会出现同一张画布上绘制多张图片
 
 # #     # plt.show()
