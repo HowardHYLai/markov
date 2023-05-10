@@ -9,7 +9,7 @@ from fun_FITPS import FITPS
 
 V, I = None, None
 
-path = r"C:/NILM/dataset/cooldata/transfer\Drill_1_0ms.csv"
+path = r"C:\NILM\DATA\0001Oven\0001Oven.CSV"
 data = pd.read_csv(path)
 V = list(data.iloc[:,0]) #實驗室量測數據用
 I = list(data.iloc[:,1])
@@ -70,23 +70,29 @@ for i in range(0, size, 32):
 X = np.array(x) ## shape: (6817, 32)  
 print("X的維度 : ",X.shape)  
 
-mtf = MarkovTransitionField(n_bins=8)     #Markov
+# mtf = MarkovTransitionField(n_bins=8)     #Markov
+# y = mtf.fit_transform(x)
+
+mtf = MarkovTransitionField(image_size=30,n_bins=8)
 y = mtf.fit_transform(x)
 
-# rp = RecurrencePlot(dimension=3, time_delay=3)   #RecurrencePlot
-# y = rp.fit_transform(X)
+# rp = RecurrencePlot(dimension=3, time_delay=1)   #RecurrencePlot
+# y = rp.fit_transform(x)
+
+# rp = RecurrencePlot(threshold='point', percentage=30)
+# y = rp.fit_transform(x)
 
 
 # 畫圖
-# plt.imshow(y[57])  ## 
+# plt.imshow(y[1550])  ## 
 # plt.show()
 
-# for i in range (4468, 4500):
+# for i in range (78, 125):
 #     plt.imshow(y[i])
 
 #     # plt.savefig("C:/NILM/pictur/" )  #儲存圖片
 
-#     plt.savefig("C:/NILM/數據圖/cool數據集/Hair_drayer_1_0ms/close/{}.png".format(i)) #输入地址，并利用format函数修改图片名称
+#     plt.savefig(r"C:\NILM\pictur_for_code\612_ele\marcov\hair_dry\1\open/{}.png".format(i)) #输入地址，并利用format函数修改图片名称
 #     plt.clf() #需要重新更新画布，否则会出现同一张画布上绘制多张图片
 
 # #     # plt.show()
