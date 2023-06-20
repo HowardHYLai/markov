@@ -9,7 +9,7 @@ from fun_FITPS import FITPS
 
 V, I = None, None
 
-path = r"C:\NILM\DATA\ya.csv"
+path = r"C:\NILM\DATA\0001Oven\0001Oven.CSV"
 data = pd.read_csv(path)
 V = list(data.iloc[:,0]) #實驗室量測數據用
 I = list(data.iloc[:,1])
@@ -21,16 +21,18 @@ I = list(data.iloc[:,1])
 ## 電壓過零點 
 zeros = []
 
-# size = len(V)
+size = len(V)
 # for i in range(size-1):
 #     if V[i] < 0 and V[i+1]>=0:
 #         zeros.append(i+1)
+
 
 for i in range (0,len(V)-1):                        #計算過零點
     if V[i+1]>0 and V[i]<0:                         #判斷式1
         zeros.append(i)                              #將值丟入矩陣
     elif V[i+1]>0 and V[i-1]<0 and V[i] == 0:       #判斷式2
         zeros.append(i)
+
 
 ## fitps 
 ##########################################################################
@@ -80,11 +82,12 @@ print("X的維度 : ",X.shape)
 # mtf = MarkovTransitionField(n_bins=8)     #Markov
 # y = mtf.fit_transform(x)
 
-# mtf = MarkovTransitionField(image_size=32,n_bins=8)
-# y = mtf.fit_transform(x)
+mtf = MarkovTransitionField(n_bins=8)
+y = mtf.fit_transform(x)
+# y = mtf.transform(x)
 
-rp = RecurrencePlot(dimension=3, time_delay=1)   #RecurrencePlot
-y = rp.fit_transform(x)
+# rp = RecurrencePlot(dimension=3, time_delay=1)   #RecurrencePlot
+# y = rp.fit_transform(x)
 
 # rp = RecurrencePlot(threshold='point', percentage=30)
 # y = rp.fit_transform(x)
