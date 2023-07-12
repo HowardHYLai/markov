@@ -9,7 +9,7 @@ from fun_FITPS import FITPS
 
 V, I = None, None
 
-path = r"C:\NILM\DATA\0001Oven\0001Oven.CSV"
+path = r"C:\NILM\DATA\實驗室\H30.csv"
 data = pd.read_csv(path)
 V = list(data.iloc[:,0]) #實驗室量測數據用
 I = list(data.iloc[:,1])
@@ -97,12 +97,12 @@ y = mtf.fit_transform(x)
 # plt.imshow(y[175])  ## 
 # plt.show()
 
-# for i in range (183, 391):
-#     plt.imshow(y[i])
+for i in range (2734, 2796):
+    plt.imshow(y[i])
 
-#     # plt.savefig("C:/NILM/pictur/" )  #儲存圖片
+    # plt.savefig("C:/NILM/pictur/" )  #儲存圖片
 
-#     plt.savefig(r"C:\NILM\pictur_for_code\612_ele\marcov\吸塵+冷氣\測試/{}.png".format(i)) #输入地址，并利用format函数修改图片名称
-#     plt.clf() #需要重新更新画布，否则会出现同一张画布上绘制多张图片
+    plt.savefig(r"C:\研討會用資料與圖片\關閉 close\H30/{}.png".format(i)) #输入地址，并利用format函数修改图片名称
+    plt.clf() #需要重新更新画布，否则会出现同一张画布上绘制多张图片
 
 # #     # plt.show()

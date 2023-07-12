@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 
 
 
-path = r"C:\NILM\dataset\cooldata\transfer\Hair_drayer_1_0ms.csv" #資料路徑
+path = r"C:\NILM\dataset\cooldata\transfer\Drill_1_0ms.csv"#資料路徑
 zero = []                                           #過零點值存放矩陣
 
 data = pd.read_csv(path)                            #pd抓取資料
@@ -72,7 +72,7 @@ plt.show()
 x = []  #1077
 size = len(rms)
 
-for i in range(0, size - 32, 16):
+for i in range(0, size - 32, 10):
     a = (rms[i : i + 32])
     # b = abs(a)
     x.append(a)
@@ -101,12 +101,12 @@ y = mtf.fit_transform(x)
 # plt.imshow(y[1])  ## 
 # plt.show()
 
-# for i in range (0, 17):
+# for i in range (0, len(y)):
 #     plt.imshow(y[i])
 
 #     # plt.savefig("C:/NILM/pictur/" )  #儲存圖片
 
-#     plt.savefig(r"C:\NILM\pictur_for_code\cool數據集\RMS\cool hair dry\marcov/{}.png".format(i)) #输入地址，并利用format函数修改图片名称
-# #     plt.clf() #需要重新更新画布，否则会出现同一张画布上绘制多张图片
+#     plt.savefig(r"C:\NILM\pictur_for_code\cool數據集\RMS\覆蓋率 32-10\cool hair dry/{}.png".format(i)) #输入地址，并利用format函数修改图片名称
+#     plt.clf() #需要重新更新画布，否则会出现同一张画布上绘制多张图片
 
 # #     # plt.show()
