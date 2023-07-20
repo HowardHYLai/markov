@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 
 
 
-path = r"C:\NILM\dataset\cooldata\transfer\Drill_1_0ms.csv"#資料路徑
+path = r"C:\NILM\dataset\cooldata\transfer\Hair_drayer_1_0ms.csv"#資料路徑
 zero = []                                           #過零點值存放矩陣
 
 data = pd.read_csv(path)                            #pd抓取資料
